@@ -10,28 +10,25 @@ using Microsoft.Extensions.Logging;
 namespace C__Project
 {
 
-	
-	//choose class
+  class program
+ {
 
-	//determin HP based on class
+	 //Ask for name and class
+	static void Main(string[] args)
+	{
+		Console.WriteLine("Enter your name.");
+		string cName = Console.ReadLine();
+		Console.WriteLine("Welcome, " + cName);
+		Console.WriteLine("What is your class (Fighter, Wizard, Rogue, etc.)");
+		string cClass = Console.ReadLine();
+		Console.WriteLine(cName + " " + "the " + cClass);
+
+	
+	}
 
 	//roll stats
-	public class Attributes 
-	{
-		public int Str;
-		public int Dex;
-		public int Con;
-		public int Int;
-		public int Wis;
-		public int Cha;
-
-		public int Hp;
-
-		public Random random_num_gen;
-
-		public Character()
-	}
-	
 
 	//level up
+ }
+
 }

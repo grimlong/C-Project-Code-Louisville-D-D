@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj": {}
+    "C:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj": {
+    "C:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj",
+        "projectUniqueName": "C:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj",
         "projectName": "C# Project",
-        "projectPath": "c:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj",
+        "projectPath": "C:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\C# Project.csproj",
         "packagesPath": "C:\\Users\\Griml\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\obj\\",
+        "outputPath": "C:\\Users\\Griml\\Desktop\\Code Louisville\\C#\\C# Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Griml\\AppData\\Roaming\\NuGet\\NuGet.Config"
