@@ -1,55 +1,86 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+
+// notes for refactoring: move classes into seperate files, remove non class properties and put them in
+// helper class.
 
 namespace C__Project
 {
 
   class program
  {
+  class Character {
+	public int Str {get;}
+    public int Dex {get;}
+    public int Con {get;}
+    public int Int {get;}
+    public int Wis {get;}
+    public int Cha {get;}
+    public int Hp {get;}
+	public int Level {get;}
 
-	 //Ask for name and class
-	static void Main(string[] args)
+    // Hit points is equal to 10 plus a modifier that is the value of CON minus ten, divided by two.
+	public static int Modifier(int score)
+	  {
+		  return (int)Math.Floor((score - 10f) /2f);
+	  }
+    public static Character Gernerate()
 	{
+		return new Character();
+	}
+	//Rolls four six sided dice and keeps the sum of the largest three dice, Called once for each stat.
+    public static int Attrubite()
+	{
+	  return new[] { s_rnd.Next(1, 7), s_rnd.Next(1, 7), s_rnd.Next(1, 7), s_rnd.Next(1, 7) }.OrderBy(v => v).Skip(1).Sum();	
+	}
+   public Character()
+	{
+		Str = Attrubite();
+		Dex = Attrubite();
+		Con = Attrubite();
+		Int = Attrubite();
+		Wis = Attrubite();
+		Cha = Attrubite();
+		Hp = 10 + Modifier(Con);
+		Level = 1;
+	}
+	static readonly Random s_rnd = new Random();
+  }
+	 //Ask for name and class, Print Name, Class, Stats, Level, HP
+	static void Main(string[] args)
+	
+	{
+		Character newCharacter = new Character();
+
 		Console.WriteLine("Enter your name.");
 		string cName = Console.ReadLine();
 		Console.WriteLine("Welcome, " + cName);
 		Console.WriteLine("What is your class (Fighter, Wizard, Rogue, etc.)");
 		string cClass = Console.ReadLine();
+		Console.WriteLine(cName + " " + "the " + cClass + " " + "Level" + " " + newCharacter.Level);
+		Console.WriteLine("STR" + " " + newCharacter.Str + " " +
+		                  "DEX" + " " + newCharacter.Dex + " " +
+						  "CON" + " " + newCharacter.Con + " " +
+						  "INT" + " " + newCharacter.Int + " " +
+						  "WIS" + " " + newCharacter.Wis + " " +
+						  "CHA" + " " + newCharacter.Cha);
+		Console.WriteLine("Hit Points:" + newCharacter.Hp);
+		Console.WriteLine("Type 'level' to level up");
 
-		//roll stats and HP than print name, class, and stats.
-
-		Console.WriteLine(cName + " " + "the " + cClass);
-
-	
+		string Lvl = Console.ReadLine();Lvl.ToString();
+		  if(Lvl.ToUpper() == "LEVEL")
+		    //increment HP and Character level
+			{ 
+				newCharacter.Hp += 10 + newCharacter.Modifier(Con);
+				newCharacter.Level += ++;
+			}
+		  else
+		  {
+			 
+		  }	 
+		
 	}
-  class Attributes {
-	public int str;
-	public int strMod;
-	        
-	public int dex;
-	public int dexMod;
-	        
-	public int con;
-	public int conMod;
-	        
-	public int itl;
-	public int itlMod;
-	        
-	public int wis;
-	public int wisMod;
-	        
-	public int cha;
-	public int chaMod;
-	        
-	public int HP;  
-  }
-	//roll stats
+
 
 	//level up
  }
