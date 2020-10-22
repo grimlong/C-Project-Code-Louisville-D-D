@@ -16,8 +16,8 @@ namespace C__Project
     public int Int {get;}
     public int Wis {get;}
     public int Cha {get;}
-    public int Hp {get;}
-	public int Level {get;}
+    public int Hp {get; set;}
+	public int Level {get; set;}
 
     // Hit points is equal to 10 plus a modifier that is the value of CON minus ten, divided by two.
 	public static int Modifier(int score)
@@ -57,6 +57,7 @@ namespace C__Project
 		Console.WriteLine("Welcome, " + cName);
 		Console.WriteLine("What is your class (Fighter, Wizard, Rogue, etc.)");
 		string cClass = Console.ReadLine();
+		  start:
 		Console.WriteLine(cName + " " + "the " + cClass + " " + "Level" + " " + newCharacter.Level);
 		Console.WriteLine("STR" + " " + newCharacter.Str + " " +
 		                  "DEX" + " " + newCharacter.Dex + " " +
@@ -67,22 +68,30 @@ namespace C__Project
 		Console.WriteLine("Hit Points:" + newCharacter.Hp);
 		Console.WriteLine("Type 'level' to level up");
 
+	//level up
 		string Lvl = Console.ReadLine();Lvl.ToString();
 		  if(Lvl.ToUpper() == "LEVEL")
 		    //increment HP and Character level
 			{ 
-				newCharacter.Hp += 10 + newCharacter.Modifier(Con);
-				newCharacter.Level += ++;
+				newCharacter.Hp += 10 + Character.Modifier(newCharacter.Con);
+				newCharacter.Level ++;
+				goto start;
 			}
+
+			if(Lvl.ToUpper() == "EXIT")
+			{ 
+				Console.WriteLine("Goodbye");
+			}
+
 		  else
 		  {
-			 
+			 Console.WriteLine("Entry not recognized.  Please 'level' or 'exit'.");
+			 goto start;
 		  }	 
 		
 	}
 
 
-	//level up
  }
 
 }
