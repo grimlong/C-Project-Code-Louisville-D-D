@@ -18,15 +18,16 @@ namespace C__Project
 		return new Character();
 	}
 	
+    
    public Character()
 	{
-		Str = Helpers.Attrubite();
-		Dex = Helpers.Attrubite();
-		Con = Helpers.Attrubite();
-		Int = Helpers.Attrubite();
-		Wis = Helpers.Attrubite();
-		Cha = Helpers.Attrubite();
-		Hp = 10 + Helpers.Modifier(Con);
+		Str = Helper.Attrubite();
+		Dex = Helper.Attrubite();
+		Con = Helper.Attrubite();
+		Int = Helper.Attrubite();
+		Wis = Helper.Attrubite();
+		Cha = Helper.Attrubite();
+		Hp = 10 + Helper.Modifier(Con);
 		Level = 1;
 	}
 	
