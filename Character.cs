@@ -13,14 +13,12 @@ namespace C__Project
       public int Hp {get; set;}
 	  public int Level {get; set;}
 
-      public static Character Gernerate()
-	{
+      public static Character Gen()
+	  {
 		return new Character();
-	}
-	
-    
+	  }
    public Character()
-	{
+   {
 		Str = Helper.Attrubite();
 		Dex = Helper.Attrubite();
 		Con = Helper.Attrubite();
@@ -29,12 +27,7 @@ namespace C__Project
 		Cha = Helper.Attrubite();
 		Hp = 10 + Helper.Modifier(Con);
 		Level = 1;
-	}
-	
-
-	
+   }	
   }
-
-
  }
 
