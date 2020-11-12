@@ -43,6 +43,7 @@ namespace C__Project
                     Console.WriteLine("d10: rolls a 10 sided die");
                     Console.WriteLine("d20: rolls a 20 sided die");
 					Console.WriteLine("Level: Levels the Character");
+					Console.WriteLine("Graph: Show Graph of Stats");
 					Console.WriteLine("Exit: Exits Program");
 					break;
 
@@ -71,6 +72,50 @@ namespace C__Project
 					Console.WriteLine(rollDice.rollD20().ToString());
 					break;
 
+				case "GRAPH":
+				    Console.ForegroundColor = ConsoleColor.Green;
+					Console.Write("STR:");
+					for (int i = 0; i < newCharacter.Str; i++) Console.Write("|");
+					Console.ForegroundColor = ConsoleColor.Gray;
+					for (int i = 0; i < 20 - newCharacter.Str; i++) Console.Write("|");
+					Console.WriteLine();
+
+					Console.ForegroundColor = ConsoleColor.Green;
+					Console.Write("DEX:");
+					for (int i = 0; i < newCharacter.Dex; i++) Console.Write("|");
+					Console.ForegroundColor = ConsoleColor.Gray;
+					for (int i = 0; i < 20 - newCharacter.Dex; i++) Console.Write("|");
+					Console.WriteLine();
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+					Console.Write("CON:");
+					for (int i = 0; i < newCharacter.Con; i++) Console.Write("|");
+					Console.ForegroundColor = ConsoleColor.Gray;
+					for (int i = 0; i < 20 - newCharacter.Con; i++) Console.Write("|");
+					Console.WriteLine();
+
+					Console.ForegroundColor = ConsoleColor.Green;
+					Console.Write("INT:");
+					for (int i = 0; i < newCharacter.Int; i++) Console.Write("|");
+					Console.ForegroundColor = ConsoleColor.Gray;
+					for (int i = 0; i < 20 - newCharacter.Int; i++) Console.Write("|");
+					Console.WriteLine();
+
+					Console.ForegroundColor = ConsoleColor.Green;
+					Console.Write("WIS:");
+					for (int i = 0; i < newCharacter.Wis; i++) Console.Write("|");
+					Console.ForegroundColor = ConsoleColor.Gray;
+					for (int i = 0; i < 20 - newCharacter.Wis; i++) Console.Write("|");
+					Console.WriteLine();
+
+					Console.ForegroundColor = ConsoleColor.Green;
+					Console.Write("CHA:");
+					for (int i = 0; i < newCharacter.Cha; i++) Console.Write("|");
+					Console.ForegroundColor = ConsoleColor.Gray;
+					for (int i = 0; i < 20 - newCharacter.Cha ; i++) Console.Write("|");
+					Console.WriteLine();
+					break;
+
 				case "LEVEL":	
 				newCharacter.Hp += 10 + Helper.Modifier(newCharacter.Con);
 				newCharacter.Level ++;
@@ -84,6 +129,7 @@ namespace C__Project
                    
 				default:
 			    Console.WriteLine("Entry not recognized. Please enter valid command.");
+				
 				break;
 				
 			}

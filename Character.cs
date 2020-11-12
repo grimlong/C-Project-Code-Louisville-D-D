@@ -1,8 +1,7 @@
 using System;
-using System.Linq;
 
 namespace C__Project
- {
+{
     class Character {
 	  public int Str {get;}
       public int Dex {get;}
@@ -12,11 +11,13 @@ namespace C__Project
       public int Cha {get;}
       public int Hp {get; set;}
 	  public int Level {get; set;}
+	  public DateTime birthday {get; set;}
+	  
 
       public static Character Gen()
 	  {
 		return new Character();
-	  }
+	  } 
    public Character()
    {
 		Str = Helper.Attrubite();
