@@ -22,7 +22,8 @@ graph of your stats and level up your character or exit the program.
 
 - I wrote unit tests but I could not get VS Code to cooperate with them.
 My powerstrip exploded and fried my pc with less than a month left to finish
-
+it put me way behind. I'm going to continue to work on it. I hope to add the 
+unit tests and a couple of other things before the end of the week.
 
 -------------------------------------------------------------------------
 In the future I plan to add an api (https://www.dnd5eapi.co/) along with
